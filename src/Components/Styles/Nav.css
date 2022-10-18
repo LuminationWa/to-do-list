@@ -1,0 +1,50 @@
+nav {
+    min-height: 30px;
+    max-width: 5%;
+    position: fixed;
+    left: 1%;
+    top: 1%;
+    z-index: 10;
+}
+
+.nav-btn {
+    margin-top: 15%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    border: none;
+    transition: all ease 0.3s;
+    opacity: 0.85;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.menu-btn {
+    background-image: url("../../Images/menu.png");
+}
+
+.hidden-btn {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.tasks-btn {
+    background-image: url("../../Images/tasks.png");
+}
+
+.timeline-btn {
+    background-image: url("../../Images/clock.png");
+}
+
+.calendar-btn {
+    background-image: url("../../Images/calendar.png");
+}

@@ -1,0 +1,11 @@
+To-do list
+Sort by time
+
+Firebase
+
+Tasks
+    -Should be able to add/edit/remove tasks
+    -Should be able to mark task as done
+Timeline
+    -Either preset or custom
+    -Add tasks by selecting from menu or dragging

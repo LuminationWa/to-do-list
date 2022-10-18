@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.add-task div {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-btns {
+    flex-direction: row;
+}

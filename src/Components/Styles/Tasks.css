@@ -1,0 +1,48 @@
+:root {
+    --main-color: #fcfcfc;
+    --secondary-color: #7021fc;
+    --tertiary-color: #d5c4f4;
+    --extra-color: #a0dcdd;
+}
+
+.tasks {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-areas: 
+            "s t t t t t t"
+            "s c c c c c c"
+            "s c c c c c c"
+            "s c c c c c c"
+            "s c c c c c c"
+            "s c c c c c c"
+            "s c c c c c c"
+            "s c c c c c c";
+}
+
+.add-btn {
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    border: none;
+}
+
+.side-bar {
+    position:relative;
+    flex-direction: column;
+    grid-area: s;
+    background: var(--secondary-color);
+}
+
+.top-bar {
+    grid-area: t;
+    background: var(--extra-color);
+}
+
+.content {
+    grid-area: c;
+    background-color: var(--main-color);
+}
