@@ -10,14 +10,11 @@
     min-width: 100vw;
     display: grid;
     grid-template-areas: 
-            "s t t t t t t"
-            "s c c c c c c"
-            "s c c c c c c"
-            "s c c c c c c"
-            "s c c c c c c"
-            "s c c c c c c"
-            "s c c c c c c"
-            "s c c c c c c";
+            "s f t"
+            "s f c";
+    grid-template-columns: 1.5fr 0.01fr 8fr ;
+    grid-template-rows: 1.5fr 8fr;
+    background-color: gray;
 }
 
 .add-btn {
