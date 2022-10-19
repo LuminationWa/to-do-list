@@ -1,0 +1,9 @@
+.tasks-overview {
+    display: grid;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 20px;
+    grid-template-rows: repeat(auto-fill, minmax(200px, 10%));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 20%));
+    background-color: #ccf6f7;
+}

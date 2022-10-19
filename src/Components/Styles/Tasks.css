@@ -1,6 +1,6 @@
 :root {
     --main-color: #fcfcfc;
-    --secondary-color: #7021fc;
+    --secondary-color: rgb(255, 255, 255);
     --tertiary-color: #d5c4f4;
     --extra-color: #a0dcdd;
 }
@@ -41,5 +41,5 @@
 
 .content {
     grid-area: c;
-    background-color: var(--main-color);
+    background-color: #ccf6f7;
 }

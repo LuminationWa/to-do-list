@@ -4,6 +4,10 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import TaskCard from "./TaskCard";
+import "./Styles/TasksOverview.css";
+import "./loading.css";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBx6hJiZBJZd2oHcuy5wYEjnGgaBn2OWCI",
   authDomain: "to-do-list-8980d.firebaseapp.com",
@@ -20,8 +24,10 @@ const db = firebase.firestore();
 
 const TasksOverview = () => {
   const [tasksInfo, setTasksInfo] = useState([]);
-
+  const [tasksArray, setTasksArray] = useState([]);
   const getInfo = async () => {
+    let loadingElement = document.querySelector(".lds-ellipsis");
+    loadingElement.classList.toggle("hidden");
     // Gets the database info
     const collRef = db.collection("tasks").doc("Edel").collection("Tasks");
     let placeHolder = [];
@@ -32,6 +38,7 @@ const TasksOverview = () => {
       });
     });
     setTasksInfo(placeHolder);
+    loadingElement.classList.toggle("hidden");
   };
 
   useEffect(() => {
@@ -39,10 +46,20 @@ const TasksOverview = () => {
   }, []);
 
   useEffect(() => {
-    console.log(tasksInfo);
+    // Needs fixing. Will add multiple copies of the same task. Rest working as intended tho.
+    if (tasksInfo.length > 0)
+      tasksInfo.forEach((task) => {
+        setTasksArray((prevArray) => [
+          ...prevArray,
+          <TaskCard key={task} {...task} />,
+        ]);
+      });
   }, [tasksInfo]);
 
-  return <div>Algo</div>;
+  return <div class="tasks-overview">
+    <div class="lds-ellipsis hidden"><div></div><div></div><div></div><div></div></div>
+    {tasksArray}
+    </div>;
 };
 
 export default TasksOverview;
