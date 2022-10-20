@@ -6,9 +6,39 @@
     border-radius: 2%;
     border: 0.5px solid white;
     padding: 10px;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     color: rgb(255, 255, 255);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    justify-content: space-around;
+    max-height: 250px;
+    max-width: 750px;
 }
+
+.task-card h1 {
+    font-size: 1.5rem;
+    text-decoration: overline;
+}
+
+.task-card h2 {
+    font-size: 1rem;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+}
+
+.task-card h2::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.action-bar {
+    display: flex;
+    align-self: flex-end;
+    gap: 10px;
+}
+
+.icon {
+    max-height: 25px;
+}
+
