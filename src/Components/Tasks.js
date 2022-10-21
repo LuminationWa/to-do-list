@@ -9,11 +9,18 @@ const Tasks = () => {
   };
   return (
     <div class="tasks">
-      <Modal toggleModal={toggleModal}/>
+      <Modal toggleModal={toggleModal} />
       <div class="side-bar">test</div>
       <div class="top-bar"></div>
-      <div class="content"><TasksOverview /></div>
-      <button class="add-btn" onClick={() => toggleModal(".add-task")}>
+      <div class="content">
+        <TasksOverview />
+      </div>
+      <button
+        class="add-btn"
+        onClick={() => {
+          toggleModal(".add-task");
+        }}
+      >
         +
       </button>
     </div>

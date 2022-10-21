@@ -7,6 +7,11 @@ import firebase from "../firebase.js";
 const db = firebase.firestore();
 
 const TasksOverview = () => {
+  const [refresher, setRefresher] = useState(0); //Used for refreshes
+  const refresh = () => {
+    setRefresher((refresh) => refresh + 1);
+    console.log(refresher);
+  };
   const [tasksInfo, setTasksInfo] = useState([]);
   const [tasksArray, setTasksArray] = useState([]);
   const getInfo = async () => {
@@ -27,23 +32,30 @@ const TasksOverview = () => {
 
   useEffect(() => {
     getInfo();
-  }, []);
+  }, [refresher]);
 
   useEffect(() => {
-    // Needs fixing. Will add multiple copies of the same task. Rest working as intended tho.
+    setTasksArray([]);
     if (tasksInfo.length > 0)
       tasksInfo.forEach((task) => {
         setTasksArray((prevArray) => [
           ...prevArray,
-          <TaskCard key={task} {...task} />,
+          <TaskCard key={task} {...task} refresh={refresh} />,
         ]);
       });
   }, [tasksInfo]);
 
-  return <div class="tasks-overview">
-    <div class="lds-ellipsis hidden"><div></div><div></div><div></div><div></div></div>
-    {tasksArray}
-    </div>;
+  return (
+    <div class="tasks-overview">
+      <div class="lds-ellipsis hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      {tasksArray}
+    </div>
+  );
 };
 
 export default TasksOverview;

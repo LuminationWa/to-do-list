@@ -6,19 +6,15 @@ import trash from "../Images/trash.png";
 import firebase from "../firebase.js";
 const db = firebase.firestore();
 
-const TaskCard = ({
-  Name = "No name",
-  Description = "No desc",
-  Priority = 0,
-  Time = "No limit",
-}) => {
-  const deleteFromDB = (document) => {
+const TaskCard = (props) => {
+  const deleteFromDB = (document, refresh) => {
     db.collection("tasks")
       .doc("Edel")
       .collection("Tasks")
       .doc(document)
       .delete()
       .then(() => {
+        props.refresh();
         console.log("Document successfully deleted!");
       })
       .catch((error) => {
@@ -28,8 +24,8 @@ const TaskCard = ({
 
   return (
     <div class="task-card">
-      <h1>{Name}</h1>
-      <h2>{Description}</h2>
+      <h1>{props.Name}</h1>
+      <h2>{props.Description}</h2>
       <div class="action-bar">
         <input
           type="image"
@@ -47,7 +43,7 @@ const TaskCard = ({
           alt="Trash button"
           class="icon"
           onClick={() => {
-            deleteFromDB(Name);
+            deleteFromDB(props.Name);
           }}
         ></input>
       </div>
