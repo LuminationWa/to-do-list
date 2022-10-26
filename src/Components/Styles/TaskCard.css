@@ -12,7 +12,7 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;
     justify-content: space-around;
-    max-height: 250px;
+    max-height: 200px;
     max-width: 750px;
 }
 
@@ -26,6 +26,7 @@
     overflow: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;
+    opacity: 0.8;
 }
 
 .task-card h2::-webkit-scrollbar { 
