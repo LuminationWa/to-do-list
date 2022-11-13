@@ -1,7 +1,7 @@
 :root {
-    --main-color: #fcfcfc;
-    --secondary-color: rgb(255, 255, 255);
-    --tertiary-color: #d5c4f4;
+    --main-color: #edf2f4;
+    --secondary-color: #8d99ae;
+    --tertiary-color: hsl(217, 10%, 42%);
     --extra-color: #a0dcdd;
 }
 
@@ -31,15 +31,15 @@
     position:relative;
     flex-direction: column;
     grid-area: s;
-    background: var(--secondary-color);
+    background: var(--tertiary-color);
 }
 
 .top-bar {
     grid-area: t;
-    background: var(--extra-color);
+    background: var(--secondary-color);
 }
 
 .content {
     grid-area: c;
-    background-color: #ccf6f7;
+    background-color: var(--main-color);
 }
